@@ -1,0 +1,69 @@
+{% extends "users/auth_base.html" %}{% block content %}{% load static %}
+<section class="form_container">
+    <div class="top">
+        <h5>Login Page</h5>
+    </div>
+    <div class="bottom">
+        <form action="" method="post">
+            {% csrf_token %} {% for field in form %}
+            <div class="input_container">
+                <label for="{{field.id_for_label}}"> {{field.label}} </label>
+                {{field}}
+            </div>
+            {% endfor %} {% comment %}
+            <div class="input_container">
+                <label for="id_last_name"> Last name </label>
+                <input
+                    type="text"
+                    name="last_name"
+                    maxlength="150"
+                    id="id_last_name"
+                />
+            </div>
+
+            <div class="input_container">
+                <label for="id_email"> Email address </label>
+                <input
+                    type="email"
+                    name="email"
+                    maxlength="254"
+                    id="id_email"
+                />
+            </div>
+
+            <div class="input_container">
+                <label for="id_username"> Username </label>
+                <input
+                    type="text"
+                    name="username"
+                    maxlength="150"
+                    required
+                    id="id_username"
+                />
+            </div>
+
+            <div class="input_container">
+                <label for="id_password"> Password </label>
+                <input
+                    type="password"
+                    name="password"
+                    class="hello hi"
+                    placeholder="Enter strong password"
+                    maxlength="128"
+                    required
+                    id="id_password"
+                />
+            </div>
+            {% endcomment %}
+
+            <div class="submit_container">
+                {% if error %}
+                <p class="error-message">{{message}}</p>
+                {% endif %}
+                <button type="submit">Create Account</button>
+                <a href="{% url 'users:login' %}">Login</a>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

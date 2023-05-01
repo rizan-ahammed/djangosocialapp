@@ -1,0 +1,26 @@
+{% load static %}
+<header>
+    <h1>
+        <a href="{% url 'web:index' %}">
+            <img
+                src="{% static 'images/icons/logo.png' %}"
+                alt="Logo"
+            />
+        </a>
+    </h1>
+    <div>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'posts:create_post' %}" class="login my-posts">Create</a>
+        <a href="{% url 'posts:my_posts' %}" class="login my-posts">My Posts</a>
+        <a href="{% url 'users:logout' %}" class="login"> Logout </a>
+        {% else %}
+        <a href="{% url 'users:login' %}" class="login"> Login </a>
+        {% endif %}
+    <div>
+    <div id="hamburger-icon">
+        <img
+            src="{% static 'images/icons/hamburger.svg' %}"
+            alt="Hamburger"
+        />
+    </div>
+</header>
