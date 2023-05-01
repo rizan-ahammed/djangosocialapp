@@ -44,33 +44,7 @@
                             {{instance.published_date}}
                         </p>
                     </span>
-                    <ul class="social">
-                        <li>
-                            <a href="#" class="copy-link">
-                                <span class="link">
-                                    <img src="{% static 'images/icons/copy-link.svg' %}" alt="Copy-link" />
-                                </span>
-                                Copy link
-                            </a>
-                        </li>
-                        <li class="social-media">
-                            <a target="_blank" href="https://www.twitter.com/intent/tweet?text={{request.build_absolute_uri}}">
-                                <img src="{% static 'images/icons/twitter.svg' %}" alt="Twitter" />
-                            </a>
-                        </li>
-
-                        <li class="social-media">
-                            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}">
-                                <img src="{% static 'images/icons/facebook.svg' %}" alt="Facebook" />
-                            </a>
-                        </li>
-                        <li class="social-media">
-                            <a target="_blank" href="https://api.whatsapp.com/send/?text={{request.build_absolute_uri}}">
-                                <img src="{% static 'images/icons/whatsapp.svg' %}" alt="WhatsApp" />
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                   
                 <p class="detailed-description">
                     {{instance.description|safe}}
                 </p>
