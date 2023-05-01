@@ -11,7 +11,6 @@ class PostForm(forms.ModelForm):
         exclude = ("author", "published_date", "is_deleted", "categories")
 
         widgets = {
-            "time_to_read": forms.TextInput(attrs={'class': "input"}),
             "title": forms.TextInput(attrs={'class': "input"}),
             "short_description": forms.Textarea(attrs={'class': "input"}),
         }
@@ -26,15 +25,12 @@ class PostForm(forms.ModelForm):
             "short_description": {
                 "required": "Short description field is required",
             },
-            "time_to_read": {
-                "required": "Time to read field is required",
-            },
             "featured_image": {
                 "required": "Featured image field is required",
             },
             "is_draft": {
                 "required": "Is draft field is required",
-            }, 
+            },
             # "tags": {
             #     "required": "Tags field is required",
             # },

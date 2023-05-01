@@ -25,7 +25,6 @@ class Post(models.Model):
     short_description = models.TextField()
     description = RichTextField()
     categories = models.ManyToManyField("posts.Category")
-    time_to_read = models.CharField(max_length=128)
     featured_image = models.ImageField(upload_to="posts/")
     is_draft = models.BooleanField(default=False)
 

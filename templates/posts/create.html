@@ -3,7 +3,7 @@
             <section class="wrapper">   
                 {% include 'web/includes/header.html' %}
                 <section class="spotlight">
-                    <h3>Create new post</h3>
+                    <h3>Create New Event</h3>
                     <form action="" method="post" enctype="multipart/form-data" class="ajax redirect">
                             {% csrf_token %}
                             <div class="form-field">
@@ -34,16 +34,7 @@
                                 </label>
                                 {{form.tags}}
                             </div>
-                            <div class="form-field">
-                                <label for="{{form.time_to_read.id_for_label}}" class="subheads" >
-                                    {{form.time_to_read.label}}
-                                </label>
-                                {{form.time_to_read}}
-                            </div>
-                            <div class="form-field">
-                                <label for="{{form.featured_image.id_for_label}}" class="subheads" >
-                                    {{forms.featured_image.label}}
-                                </label>
+                            
                                 {{form.featured_image}}
                             </div>
                             <div class="form-field"></div>
